@@ -1,0 +1,33 @@
+//variables
+$primary-color:#333;
+
+
+
+//mixing
+@mixin font($font-stack)
+{
+    font :100% ,$font-stack,sans-serif;
+    color: $primary-color;
+}
+@mixin link-in-list(){
+    text-decoration: none;
+    color: gray;
+}
+@mixin btn-in-list(){
+    border-radius: 50%;    
+}
+*{
+    @include font(Calibri);
+    direction: center;
+}
+body{
+    li{
+        a{
+            @include link-in-list();
+        }
+        button{
+            @include btn-in-list();
+            &:hover{opacity:80%;}
+        }
+    }
+}
